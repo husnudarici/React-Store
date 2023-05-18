@@ -1,0 +1,51 @@
+@function primary($name: 400) {
+    @return var(--PC#{$name});
+}
+
+@function primary-rgb($name: 400) {
+    @return var(--PC#{$name}-RGB);
+}
+
+@function red($name: 400) {
+    @return var(--R#{$name});
+}
+
+@function yellow($name: 400) {
+    @return var(--Y#{$name});
+}
+
+@function green($name: 400) {
+    @return var(--G#{$name});
+}
+
+@function blue($name: 400) {
+    @return var(--B#{$name});
+}
+
+@function purple($name: 400) {
+    @return var(--P#{$name});
+}
+
+@function teal($name: 400) {
+    @return var(--T#{$name});
+}
+
+@function neutral($name: 400) {
+    @return var(--N#{$name});
+}
+
+@function dark-neutral($name: 400) {
+    @return var(--DN#{$name});
+}
+
+@function dark-neutral-rgb($name: 400) {
+    @return var(--DN#{$name}-RGB);
+}
+
+@function light-neutral($name: 400) {
+    @return var(--LN#{$name});
+}
+
+@function light-neutral-rgb($name: 400) {
+    @return var(--LN#{$name}-RGB);
+}

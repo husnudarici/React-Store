@@ -16,12 +16,6 @@ const Header = () => {
         setNewData("Hüsnü");
     }
 
-    let sum = (...args) => {
-        return args.reduce((number, current) => number + current);
-    };
-
-    console.log(sum(10, 20, 30, 40));
-
     return (
         <div ref={headerRef} className="header">
             <div className="container">

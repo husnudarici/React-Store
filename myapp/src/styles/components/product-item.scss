@@ -1,0 +1,12 @@
+.product-item {
+    &-detail {
+        &-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        &-seller {
+            font-size: 12px;
+        }
+    }
+}
