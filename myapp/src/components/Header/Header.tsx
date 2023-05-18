@@ -3,8 +3,7 @@ import { GlobalContext } from "../../context/context";
 
 const Header = () => {
     const headerRef = useRef<HTMLDivElement | null>(null);
-    const { setHeaderHeight } = useContext(GlobalContext);
-    const { setNewData } = useContext(GlobalContext);
+    const { setHeaderHeight, setNewData } = useContext(GlobalContext);
 
     useEffect(() => {
         if (headerRef.current) {
@@ -17,10 +16,24 @@ const Header = () => {
         setNewData("Hüsnü");
     }
 
+    let sum = (...args) => {
+        return args.reduce((number, current) => number + current);
+    };
+
+    console.log(sum(10, 20, 30, 40));
+
     return (
         <div ref={headerRef} className="header">
-            Header
-            <button onClick={handleAdd}>Yeni Ekle</button>
+            <div className="container">
+                <div className="row align-items-center justify-content-between">
+                    <div className="col-auto">
+                        <h1>LOGO</h1>
+                    </div>
+                    <div className="col-auto">
+                        <button onClick={handleAdd}>Yeni Ekle</button>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

@@ -1,5 +1,3 @@
-// src/context/GlobalContext.js
-
 import { createContext, useState } from "react";
 
 export const GlobalContext = createContext();
