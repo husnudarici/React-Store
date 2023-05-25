@@ -1,11 +1,12 @@
 import React from "react";
+import { Card } from "react-bootstrap";
 
 const ProductInfo = (props) => {
     return (
-        <div className="product-item-detail card-body">
+        <Card.Body>
             <span className="product-item-detail-seller">n11.com</span>
             {props.children}
-        </div>
+        </Card.Body>
     );
 };
 

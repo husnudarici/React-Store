@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { GlobalProvider, ThemeContext } from "./context/context";
 
-import Header from "./components/Header/Header.tsx";
-import ProductList from "./components/ProductList/ProductList.tsx";
+import Header from "./components/Header/Header";
+import ProductList from "./components/ProductList/ProductList";
+import Counter from "./components/ProductItem/Counter";
 
 import "./styles/main.scss";
 
@@ -34,24 +35,16 @@ const ColorPalette = () => {
 };
 
 const App = () => {
+    const [counter, setCounter] = useState(0);
     return (
         <React.StrictMode>
             <GlobalProvider>
                 <ColorPalette />
                 <Header />
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-auto p-3">
-                            <h1>Navigation</h1>
-                        </div>
-                        <div className="col p-3">
-                            <ProductList />
-                        </div>
-                        <div className="col-auto p-3">
-                            <h1>BASKET</h1>
-                        </div>
-                    </div>
-                </div>
+                <ProductList />
+                <Counter counter={counter} setCounter={setCounter}>
+                    {counter}
+                </Counter>
             </GlobalProvider>
         </React.StrictMode>
     );
