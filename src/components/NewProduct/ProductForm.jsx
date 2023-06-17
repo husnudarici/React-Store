@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Col, Form, Row, Button, InputGroup } from "react-bootstrap";
+import { GlobalContext } from "../../context/context";
 
-const ProductForm = ({ onSaveProductData }) => {
+const ProductForm = ({ onSaveProductData, products }) => {
+    const { setIsAdd } = useContext(GlobalContext);
+
     const [newProduct, setNewProduct] = useState({
         title: "",
         price: "",
@@ -25,7 +28,15 @@ const ProductForm = ({ onSaveProductData }) => {
         if (form.checkValidity()) {
             event.preventDefault();
 
-            onSaveProductData(newProduct);
+            const addProduct = {
+                id: products.length + 1,
+                title,
+                price,
+                image,
+                description,
+            };
+
+            onSaveProductData(addProduct);
 
             setNewProduct({
                 title: "",
@@ -133,7 +144,14 @@ const ProductForm = ({ onSaveProductData }) => {
                         </Form.Control.Feedback>
                     </Form.Group>
                 </Row>
-                <Button type="submit">Ürün Ekle</Button>
+                <Button type="submit">Ürün Ekle</Button>{" "}
+                <Button
+                    variant="secondary"
+                    type="button"
+                    onClick={() => setIsAdd(false)}
+                >
+                    Vazgeç
+                </Button>
             </Form>
         </div>
     );

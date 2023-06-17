@@ -3,7 +3,6 @@ import { GlobalContext } from "../../context/context";
 
 const Slider = () => {
     const { headerHeight } = useContext(GlobalContext);
-    const { newData } = useContext(GlobalContext);
 
     return (
         <div style={{ marginTop: headerHeight }}>Added new data: {newData}</div>

@@ -1,11 +1,9 @@
 import React from "react";
+
 import ProductForm from "./ProductForm";
 
-const NewProduct = ({ setProducts }) => {
-    const onSaveProductData = (productData) => {
-        setProducts((prevState) => [productData, ...prevState]);
-    };
-    return <ProductForm onSaveProductData={onSaveProductData} />;
+const NewProduct = ({ onAdd, products }) => {
+    return <ProductForm onSaveProductData={onAdd} products={products} />;
 };
 
 export default NewProduct;

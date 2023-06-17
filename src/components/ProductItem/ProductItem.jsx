@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Button, Card } from "react-bootstrap";
 
 import ProductInfo from "./ProductInfo";
 import Counter from "./Counter";
 
-const ProductItem = (props) => {
-    const { title, price, image, description } = props;
+const ProductItem = ({ title, price, image, description }) => {
+    const [counter, setCounter] = useState(price);
     const [productTitle, setProductTitle] = useState(title);
+
+    useEffect(() => {
+        setCounter(price);
+    }, [price]);
 
     const submitHandle = () => {
         setProductTitle("Güncellendi");
-        console.log(productTitle + " güncellendi");
     };
-
-    const [counter, setCounter] = useState(price);
 
     return (
         <Col xs={12} sm={6} md={4} lg={3} xl={2} className="p-3">
@@ -39,6 +40,12 @@ const ProductItem = (props) => {
                         onClick={submitHandle}
                     >
                         Güncelle
+                    </Button>
+                    <Button
+                        variant="danger"
+                        onClick={(e) => console.log("sil")}
+                    >
+                        Sil
                     </Button>
                 </ProductInfo>
             </Card>

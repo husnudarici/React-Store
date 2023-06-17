@@ -3,7 +3,7 @@ import { GlobalContext } from "../../context/context";
 import { Container, Col, Row, Button } from "react-bootstrap";
 
 const Header = () => {
-    const { setHeaderHeight, setNewData } = useContext(GlobalContext);
+    const { setHeaderHeight, setIsAdd } = useContext(GlobalContext);
     const headerRef = useRef(null);
 
     useEffect(() => {
@@ -14,7 +14,7 @@ const Header = () => {
 
     function handleAdd(e) {
         e.preventDefault();
-        setNewData("Hüsnü");
+        setIsAdd(true);
     }
 
     return (
@@ -26,7 +26,7 @@ const Header = () => {
                     </Col>
                     <Col sm="auto" md="auto" lg="auto" xl="auto">
                         <Button variant="primary" onClick={handleAdd}>
-                            Sepetim
+                            Yeni Ürün Ekle
                         </Button>
                     </Col>
                 </Row>

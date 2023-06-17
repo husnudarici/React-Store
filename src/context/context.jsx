@@ -46,11 +46,11 @@ export const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
     const [headerHeight, setHeaderHeight] = useState(0);
-    const [newData, setNewData] = useState("");
+    const [isAdd, setIsAdd] = useState(false);
 
     return (
         <GlobalContext.Provider
-            value={{ headerHeight, setHeaderHeight, newData, setNewData }}
+            value={{ headerHeight, setHeaderHeight, isAdd, setIsAdd }}
         >
             <ThemeContext.Provider value={theme}>
                 {children}
